@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CryptidProject.Migrations
 {
     [DbContext(typeof(CryptidProjectContext))]
-    [Migration("20221120191004_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20221120213057_Initial-Seed")]
+    partial class InitialSeed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
