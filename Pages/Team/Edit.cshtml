@@ -1,0 +1,50 @@
+﻿@page
+@model CryptidProject.Pages.Team.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Cryptids</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cryptids.ID" />
+            <div class="form-group">
+                <label asp-for="Cryptids.CryptidName" class="control-label"></label>
+                <input asp-for="Cryptids.CryptidName" class="form-control" />
+                <span asp-validation-for="Cryptids.CryptidName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cryptids.OtherName" class="control-label"></label>
+                <input asp-for="Cryptids.OtherName" class="form-control" />
+                <span asp-validation-for="Cryptids.OtherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cryptids.Description" class="control-label"></label>
+                <input asp-for="Cryptids.Description" class="form-control" />
+                <span asp-validation-for="Cryptids.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cryptids.Location" class="control-label"></label>
+                <input asp-for="Cryptids.Location" class="form-control" />
+                <span asp-validation-for="Cryptids.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
