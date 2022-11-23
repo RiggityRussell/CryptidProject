@@ -7,9 +7,8 @@
 
 <h1>UnitedStates</h1>
 <h2>BigFoot Sightings per State</h2>
-
+<div id="geochart-colors" style="width: 700px; height: 433px;"></div>
 <div>
-    
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
             google.charts.load('current', {
@@ -73,9 +72,6 @@
                 ['US-TN', 104],
                 ['US-MO', 53],
                 ['US-NV',9]
-              
-          
-               
                 ]);
 
                 var options = {
@@ -90,11 +86,6 @@
             chart.draw(data, { width: 1000, height: 800, region: "US", resolution: "provinces" });
             };
         </script>
-  
-        <div id="geochart-colors" style="width: 700px; height: 433px;"></div>
+        
+</div>
 
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Cryptids?.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
