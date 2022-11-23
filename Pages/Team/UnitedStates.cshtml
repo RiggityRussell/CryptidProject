@@ -1,0 +1,100 @@
+﻿@page
+@model CryptidProject.Pages.Team.UnitedStatesModel
+
+@{
+    ViewData["Title"] = "UnitedStates";
+}
+
+<h1>UnitedStates</h1>
+<h2>BigFoot Sightings per State</h2>
+
+<div>
+    
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+                'packages': ['geochart'],
+                // Note: Because this chart requires geocoding, you'll need mapsApiKey.
+                // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+                'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+            });
+            google.charts.setOnLoadCallback(drawRegionsMap);
+
+            function drawRegionsMap() {
+                var data = google.visualization.arrayToDataTable([
+                ['State', 'Sightings'],
+                ['US-IL', 302],
+                ['US-IN', 82],
+                ['US-IA', 76],
+                ['US-RI', 5],
+                ['US-MI', 225],
+                ['US-AL', 101],
+                ['US-AR', 85],
+                ['US-AK', 110],
+                ['US-FL', 337],
+                ['US-AZ', 85],
+                ['US-CA', 460],
+                ['US-CO', 130],
+                ['US-CT', 21],
+                ['US-DE', 5],
+                ['US-NC', 106],
+                ['US-SC', 57],
+                ['US-MD', 35],
+                ['US-PA', 125],
+                ['US-OH', 318],
+                ['US-KY', 115],
+                ['US-GA', 139],
+                ['US-NM', 17],
+                ['US-OK', 111],
+                ['US-ND', 6],
+                ['US-SD', 19],
+                ['US-MT', 53],
+                ['US-MN', 20],
+                ['US-OR', 257],
+                ['US-WA', 708],
+                ['US-WY', 28],
+                ['US-HI', 0],
+                ['US-UT', 73],
+                ['US-NJ', 75],
+                ['US-NY', 120],
+                ['US-NH', 17],
+                ['US-VA', 85],
+                ['US-WV', 106],
+                ['US-TX', 253],
+                ['US-ME', 20],
+                ['US-VT', 10],
+                ['US-LA', 44],
+                ['US-MA', 37],
+                ['US-MS', 24],
+                ['US-WI', 105],
+                ['US-KS', 49],
+                ['US-ID', 103],
+                ['US-NE', 9],
+                ['US-TN', 104],
+                ['US-MO', 53],
+                ['US-NV',9]
+              
+          
+               
+                ]);
+
+                var options = {
+                   
+                    colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
+                    backgroundColor: '#81d4fa',
+                    datalessRegionColor: '#f8bbd0',
+                    defaultColor: '#f5f5f5',
+                };
+
+                var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
+            chart.draw(data, { width: 1000, height: 800, region: "US", resolution: "provinces" });
+            };
+        </script>
+  
+        <div id="geochart-colors" style="width: 700px; height: 433px;"></div>
+
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Cryptids?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
