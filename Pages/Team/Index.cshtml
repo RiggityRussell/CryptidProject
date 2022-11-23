@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Cryptid Database!</h1>
+<h1>BigFoot Database!</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -46,7 +46,9 @@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a> |
+                <a asp-page="./Bigfoot" asp-route-id="@item.ID">Bigfoot</a> |
+                    <a asp-page="./UnitedStates" asp-route-id="@item.ID">MAP</a> 
             </td>
         </tr>
 }
